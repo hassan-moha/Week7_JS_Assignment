@@ -24,14 +24,58 @@
 //     </div>
 //
 // 3️⃣ Return the created card element.
+{/* <div class="cards"></div> */}
 
+function crearCards(){
+const carDive = document.querySelector(".cards")
+
+const documentCard = document.createElement("div");
+card.classList.add("card");
+
+const img = document.createElement("img");
+img.src = user.avatar_url;
+img.alt = `${user.name}'s Avatar`;
+// img.classList.add("avatar");
+
+const cardInfo = document.createElement("div");
+cardInfo.classList.add("card-info");
+
+const name = document.createElement("h3");
+name.classList.add("name");
+name.textContent = user.name;
+
+const username = document.createElement("p");
+username.classList.add("username");
+username.textContent = `@${user.login}`;
+
+const location = document.createElement("p");
+ location.textContent = `Location: ${user.location}`;
+
+const profile = document.createElement("p");
+profile.innerHTML = `Profile: <a href="${user.html_url}" target="_blank" class="profile-link">${user.html_url}</a>`;
+
+const followers = document.createElement("p");
+followers.textContent = `Followers: ${user.followers}`;
+
+const following = document.createElement("p");
+following.textContent = `Following: ${user.following}`;
+}
+carDive.append(documentCard)
+
+documentCard.append(name);
+documentCard.append(username);
+documentCard.append(location);
+documentCard.append(profile);
+documentCard.append(followers);
+documentCard.append(following);
+documentCard.append(bio)
 
 // 🛠️ STEP 3: Add the Card to the DOM
 // 1️⃣ Call the function with the GitHub data.
 // 2️⃣ Select the `.cards` container using `document.querySelector('.cards')`.
 // 3️⃣ Append the created card to the `.cards` container.
 
-
+    
 // 🛠️ STEP 4: Fetch Followers Data
 // 1️⃣ Use the `followers_url` from the GitHub user data.
 // 2️⃣ Send a GET request to fetch follower information.
